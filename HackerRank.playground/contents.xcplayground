@@ -7,5 +7,7 @@
         <page name='Sparse Arrays'/>
         <page name='Divisible Sum Pair'/>
         <page name='Turing'/>
+        <page name='Two Sum'/>
+        <page name='Uber - Tip Coding interview'/>
     </pages>
 </playground>
