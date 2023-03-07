@@ -12,17 +12,53 @@ import UIKit
  
  Write a function that answers whether this car is able to comply with all the given trips.
  
-
+ 
  OUTPUTS EXAMPLES:
  
  [[2, 3, 6], [1,2,3]], 4 -> true
- [[2, 3, 6], [1,2,3]], 2 -> true
- [[2, 3, 6]], 2 -> false
+ [[2, 3, 6], [1,2,4]], 2 -> false
+ [[2, 3, 6]], 2 -> true
  [[2, 3, 6]], 0 -> false
+ 
+ km : capacity
  
  */
 
 func canFinishTrips(_ trips: [[Int]], capacity: Int) -> Bool {
     
-    return false
+    guard capacity > 0 else { return false }
+    
+    var passengersOnBoard = 0
+    var currentLocation = 0
+    var kilometers: [Int] = [Int](repeating: 0, count: 1000)
+    
+    for trip in trips {
+        
+        let joined = trip[0]
+        let pickup = trip[1]
+        let dropoff = trip[2]
+        
+        kilometers[pickup] += joined
+        kilometers[dropoff] -= joined
+    }
+    
+    var currentCapacity = capacity
+    
+    for kilometer in kilometers {
+        currentCapacity -= kilometer
+        
+        if currentCapacity < 0 {
+            return false
+        }
+    }
+    
+    print(kilometers)
+    
+    return true
 }
+
+canFinishTrips([[2,3,6], [1,2,3]], capacity: 4)
+canFinishTrips([[2, 3, 6], [1,2,4]], capacity: 2)
+
+
+canFinishTrips([[2,1,2], [3,1,2]], capacity: 4)
