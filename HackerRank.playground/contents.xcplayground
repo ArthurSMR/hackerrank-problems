@@ -12,5 +12,6 @@
         <page name='Best Time to Buy and Sell Stock'/>
         <page name='Running Sum of 1d Array'/>
         <page name='Find Pivot Index'/>
+        <page name='Search Insert Position'/>
     </pages>
 </playground>
