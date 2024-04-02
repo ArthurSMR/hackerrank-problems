@@ -1,6 +1,6 @@
-import UIKit
-
-// https://www.hackerrank.com/challenges/three-month-preparation-kit-sparse-arrays/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=three-month-preparation-kit&playlist_slugs%5B%5D=three-month-week-one
+//import UIKit
+//
+//// https://www.hackerrank.com/challenges/three-month-preparation-kit-sparse-arrays/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=three-month-preparation-kit&playlist_slugs%5B%5D=three-month-week-one
 
 func matchingStrings(strings: [String], queries: [String]) -> [Int] {
 
@@ -9,7 +9,7 @@ func matchingStrings(strings: [String], queries: [String]) -> [Int] {
     for string in strings {
         occurencies[string, default: 0] += 1
     }
-    
+
     var result: [Int] = []
 
     for index in 0..<queries.count {
@@ -28,3 +28,4 @@ func matchingStrings(strings: [String], queries: [String]) -> [Int] {
 }
 
 matchingStrings(strings: ["ab", "ab", "abc"], queries: ["ab", "abc", "bc"])
+
